@@ -1,0 +1,13 @@
+:root {
+  --font:  "Alegreya", serif;
+  --color-white: #F7F3F0;
+  --color-black: #000000;
+  --color-green: #253334;
+}
+
+body {
+  font-family: var(--font);
+  color: var(--color-white);
+  background-color: var(--color-green);
+  font-size: 15px;
+}
