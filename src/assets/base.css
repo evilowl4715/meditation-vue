@@ -1,8 +1,13 @@
 :root {
-  --font: 'Alegreya', serif;
+  --font: "Alegreya Sans", sans-serif;;
   --color-white: #f7f3f0;
   --color-black: #000000;
   --color-green: #253334;
+}
+
+* {
+  padding: 0;
+  margin: 0;
 }
 
 body {
@@ -10,4 +15,10 @@ body {
   color: var(--color-white);
   background-color: var(--color-green);
   font-size: 15px;
+}
+
+.container {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
 }

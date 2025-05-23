@@ -21,8 +21,12 @@ onMounted(() => {
       <div class="meditation__desc">
         {{ meditation.description }}
       </div>
-      <div class="meditation__btn">
+      <div class="meditation__bottom">
         <Button :size="111"> Начать <ArrowIcon /> </Button>
+
+        <div class="meditation__time">
+          {{ meditation.duration_min }} мин
+        </div>
       </div>
     </div>
   </div>
@@ -53,5 +57,19 @@ onMounted(() => {
   font-weight: 500;
   font-size: 15px;
   margin-bottom: 15px;
+}
+
+.meditation__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.meditation__time {
+  font-weight: 500;
+  font-size: 15px;
+  color: #253334;
+  opacity: 0.75;
 }
 </style>
