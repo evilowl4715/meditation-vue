@@ -1,29 +1,37 @@
 <script lang="ts" setup>
-import Cloud from '@/Icons/Cloud.vue'
+import Cloud from "@/icons/Cloud.vue";
+import Header from "@/components/Header.vue";
 </script>
 
 <template>
-  <div class="statistics">
-    <div class="statistic mint">
-      <div class="statistic__value">500</div>
-      <div class="statistic__name">Минут медитации</div>
-      <Cloud :width="'100%'" :height="'98'" :color="'#2B5B54'" />
-    </div>
-    <div class="statistic green">
-      <div class="statistic__value">10</div>
-      <div class="statistic__name">Спокойных дней</div>
-    </div>
-    <div class="statistic blue">
-      <div class="statistic__value">500</div>
-      <div class="statistic__name">Расслабленных дней</div>
-    </div>
-    <div class="statistic yellow">
-      <div class="statistic__value">500</div>
-      <div class="statistic__name">Фокусированных дней</div>
-    </div>
-    <div class="statistic red">
-      <div class="statistic__value">500</div>
-      <div class="statistic__name">Тревожных дней</div>
+  <Header />
+  <div class="container">
+    <div class="statistics">
+      <div class="statistic mint">
+        <div class="statistic__value">500</div>
+        <div class="statistic__name">Минут медитации</div>
+        <Cloud :width="'100%'" :height="'98'" :color="'#2B5B54'" />
+      </div>
+      <div class="statistic green">
+        <div class="statistic__value">10</div>
+        <div class="statistic__name">Спокойных дней</div>
+        <Cloud :width="'100%'" :height="'98'" :color="'#2B5B33'" />
+      </div>
+      <div class="statistic blue">
+        <div class="statistic__value">500</div>
+        <div class="statistic__name">Расслабленных дней</div>
+        <Cloud :width="'100%'" :height="'98'" :color="'#2B505B'" />
+      </div>
+      <div class="statistic yellow">
+        <div class="statistic__value">500</div>
+        <div class="statistic__name">Фокусированных дней</div>
+        <Cloud :width="'100%'" :height="'98'" :color="'#595B2B'" />
+      </div>
+      <div class="statistic red">
+        <div class="statistic__value">500</div>
+        <div class="statistic__name">Тревожных дней</div>
+        <Cloud :width="'100%'" :height="'98'" :color="'#5B2B2C'" />
+      </div>
     </div>
   </div>
 </template>

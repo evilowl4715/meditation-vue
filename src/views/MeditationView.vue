@@ -1,43 +1,47 @@
 <script lang="ts" setup>
-import MeditationsList from '@/components/MeditationsList.vue'
-import Relaxed from '@/Icons/Relaxed.vue'
-import Focused from '@/Icons/Focused.vue'
-import YinYang from '@/Icons/YinYang.vue'
-import Alarming from '@/Icons/Alarming.vue'
+import MeditationsList from "@/components/MeditationsList.vue";
+import Header from "@/components/Header.vue";
+import { useProfileStore } from "@/stores/profile.store";
+import { useFeelingStore } from "@/stores/feeling.store";
+import { onMounted } from "vue";
+
+const profileStore = useProfileStore();
+const feelingStore = useFeelingStore();
+onMounted(() => {
+  profileStore.fetchProfile();
+});
 </script>
 
 <template>
-  <div class="meditation">
-    <div class="meditation__row">
-      <div class="meditation__left">
-        <div class="meditation__avatar">
-          <img src="../assets/avatar.png" alt="" />
-        </div>
-        <div class="meditation__title">
-          <h1>Добро пожаловать, Наталья!</h1>
-          <p>Как вы сегодня себя чувствуете?</p>
-        </div>
-        <div class="meditation__icons">
-          <div class="meditation__icon">
-            <i><YinYang /></i>
-            <p>Спокойно</p>
+  <Header />
+  <div class="container">
+    <div class="meditation">
+      <div class="meditation__row">
+        <div class="meditation__left">
+          <div class="meditation__avatar">
+            <img src="../assets/avatar.png" alt="" />
           </div>
-          <div class="meditation__icon">
-            <i><Relaxed /></i>
-            <p>Расслабленно</p>
+          <div class="meditation__title">
+            <h1>Добро пожаловать, {{ profileStore.profile?.username }}!</h1>
+            <p>Как вы сегодня себя чувствуете?</p>
           </div>
-          <div class="meditation__icon">
-            <i><Focused /></i>
-            <p>Фокусировано</p>
-          </div>
-          <div class="meditation__icon">
-            <i><Alarming /></i>
-            <p>Тревожно</p>
+          <div class="meditation__icons">
+            <div
+              v-for="feeling in feelingStore.feelings"
+              :key="feeling.value"
+              @click="feelingStore.sendFeeling(feeling.type, feeling.value)"
+              class="meditation__icon"
+            >
+              <i>
+                <component :is="feeling.icon" class="feeling-icon" />
+              </i>
+              <p>{{ feeling.label }}</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="meditation__right">
-        <MeditationsList />
+        <div class="meditation__right">
+          <MeditationsList />
+        </div>
       </div>
     </div>
   </div>

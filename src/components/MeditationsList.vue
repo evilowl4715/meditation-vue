@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import ArrowIcon from '@/Icons/ArrowIcon.vue'
+import ArrowIcon from '@/icons/ArrowIcon.vue'
 import Button from './Button.vue'
 import { useMeditationsStore } from '@/stores/meditations.store'
 import { onMounted } from 'vue'

@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import LogoIcon from '@/Icons/LogoIcon.vue'
-import PlayIcon from '@/Icons/PlayIcon.vue'
-import StatisticIcon from '@/Icons/StatisticIcon.vue'
-import ExitIcon from '@/Icons/ExitIcon.vue'
+import LogoIcon from '@/icons/LogoIcon.vue'
+import PlayIcon from '@/icons/PlayIcon.vue'
+import StatisticIcon from '@/icons/StatisticIcon.vue'
+import ExitIcon from '@/icons/ExitIcon.vue'
 </script>
 
 <template>
@@ -15,7 +15,7 @@ import ExitIcon from '@/Icons/ExitIcon.vue'
         <div class="header__menu">
           <ul>
             <li>
-              <RouterLink active-class="active-link" to="/">
+              <RouterLink active-class="active-link" to="/meditation">
                 <i>
                   <PlayIcon />
                 </i>
