@@ -1,17 +1,18 @@
 :root {
-  --font: "Alegreya Sans", sans-serif;;
+  --font: 'Alegreya Sans', sans-serif;
   --color-white: #f7f3f0;
   --color-black: #000000;
   --color-green: #253334;
+  --color-light-green: #7c9a92;
 }
 
 * {
   padding: 0;
   margin: 0;
+  font-family: var(--font);
 }
 
 body {
-  font-family: var(--font);
   color: var(--color-white);
   background-color: var(--color-green);
   font-size: 15px;
