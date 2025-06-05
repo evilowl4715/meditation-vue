@@ -17,19 +17,19 @@ export const useFeelingStore = defineStore("feeling", () => {
     },
     {
       label: "Расслабленно",
-      type: "feeling_calm",
+      type: "feeling_relax",
       icon: Relaxed,
       value: 2,
     },
     {
       label: "Фокусировано",
-      type: "feeling_calm",
+      type: "feeling_focus",
       icon: Focused,
       value: 3,
     },
     {
       label: "Тревожно",
-      type: "feeling_calm",
+      type: "feeling_anxiety",
       icon: Alarming,
       value: 4,
     },

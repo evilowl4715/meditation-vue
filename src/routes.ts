@@ -6,21 +6,26 @@ export const router = createRouter({
     {
       path: "/",
       name: "start",
-      component: () => import("./views/StartView.vue"),
+      component: () => import("@/views/StartView.vue"),
     },
     {
       path: "/auth",
       name: "auth",
-      component: () => import("./views/AuthView.vue"),
+      component: () => import("@/views/AuthView.vue"),
     },
     {
       path: "/meditation",
       name: "meditation",
-      component: () => import("./views/MeditationView.vue"),
+      component: () => import("@/views/MeditationView.vue"),
     },
     {
       path: "/statistics",
-      component: () => import("./views/StatisticsView.vue"),
+      component: () => import("@/views/StatisticsView.vue"),
+    },
+    {
+      path: "/timer",
+      name: "timer",
+      component: () => import("@/views/TimerView.vue"),
     },
   ],
   history: createWebHistory(),

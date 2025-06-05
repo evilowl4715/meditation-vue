@@ -1,15 +1,24 @@
 <script lang="ts" setup>
-import ArrowIcon from '@/icons/ArrowIcon.vue'
-import Button from './Button.vue'
-import { useMeditationsStore } from '@/stores/meditations.store'
-import { onMounted } from 'vue'
+import ArrowIcon from "@/icons/ArrowIcon.vue";
+import Button from "./Button.vue";
+import { useMeditationsStore } from "@/stores/meditations.store";
+import { onMounted } from "vue";
+import { useTimerStore } from "@/stores/timer.store";
+import { useRouter } from "vue-router";
 
-const store = useMeditationsStore()
+const store = useMeditationsStore();
+const timerStore = useTimerStore();
+const router = useRouter();
+
+function startMeditation(duration: number) {
+  timerStore.sendTimer("duration_min", duration);
+  router.push({ name: "timer", query: { duration: duration.toString() } });
+}
 
 onMounted(() => {
-  store.fetchMeditations()
-  console.log('Meditations in component:', store.meditations)
-})
+  store.fetchMeditations();
+  console.log("Meditations in component:", store.meditations);
+});
 </script>
 
 <template>
@@ -22,11 +31,11 @@ onMounted(() => {
         {{ meditation.description }}
       </div>
       <div class="meditation__bottom">
-        <Button :size="111"> Начать <ArrowIcon /> </Button>
+        <Button @click="startMeditation(meditation.duration_min)" :size="111">
+          Начать <ArrowIcon />
+        </Button>
 
-        <div class="meditation__time">
-          {{ meditation.duration_min }} мин
-        </div>
+        <div class="meditation__time">{{ meditation.duration_min }} мин</div>
       </div>
     </div>
   </div>
